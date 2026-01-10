@@ -1,24 +1,21 @@
-import React from "react";
-import{
-    Box,
-    AppBar,
-    Toolbar,
-    atyled,
-    IconButton,
-    Bedge,
-    Button,
-    Typography,
+import React from 'react';
+import {
+  Box,
+  AppBar,
+  Toolbar,
+  styled,
+  Stack,
+  IconButton,
+  Badge,
+  Typography,
 } from '@mui/material';
-
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import _ from 'lodash';
 
 // components
-
 import Profile from './Profile';
-import {IconBellRinging, IconMenu } from '@tabler/icon-react';
-import {useSelector} from 'react-redux';
-
+import { IconBellRinging, IconMenu } from '@tabler/icons-react';
+import { useSelector } from 'react-redux';
 
 const Header = (props) => {
   // const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));

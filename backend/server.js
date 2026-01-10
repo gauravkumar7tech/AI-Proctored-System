@@ -7,6 +7,7 @@ import examRoutes from "./routes/examRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import codingRoutes from "./routes/codingRoutes.js";
 import resultRoutes from "./routes/resultRoutes.js";
+import { protect } from "./middleware/authMiddleware.js";
 import { exec } from "child_process";
 import fs from "fs";
 import { writeFileSync } from "fs";
@@ -34,7 +35,7 @@ app.use(
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.post("/run-python", (req, res) => {
+app.post("/run-python", protect, (req, res) => {
   const { code } = req.body; // Get Python code from request body
   writeFileSync("script.py", code); // Write code to script.py file
 
@@ -47,7 +48,7 @@ app.post("/run-python", (req, res) => {
   });
 });
 
-app.post("/run-javascript", (req, res) => {
+app.post("/run-javascript", protect, (req, res) => {
   const { code } = req.body; // Get JavaScript code from request body
   writeFileSync("script.js", code); // Write code to script.js file
 
@@ -60,7 +61,7 @@ app.post("/run-javascript", (req, res) => {
   });
 });
 
-app.post("/run-java", (req, res) => {
+app.post("/run-java", protect, (req, res) => {
   const { code } = req.body; // Get Java code from request body
   writeFileSync("Main.java", code); // Write code to Main.java file
 

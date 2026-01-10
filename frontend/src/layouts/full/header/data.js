@@ -1,3 +1,4 @@
+
 import img1 from 'src/assets/images/profile/user-1.jpg';
 import img2 from 'src/assets/images/profile/user-2.jpg';
 import img3 from 'src/assets/images/profile/user-3.jpg';
@@ -17,15 +18,15 @@ import ddIcon7 from 'src/assets/images/svgs/icon-dd-message-box.svg'
 import ddIcon8 from 'src/assets/images/svgs/icon-dd-application.svg'
 
 //
-// Notification dropdown
+// Notifications dropdown
 //
-const Notification =[
-    {
-        avatar : img1,
-        title : 'Roman joined the Team!',
-        subtitle:'Congratulate him',
-    },
-      {
+const notifications = [
+  {
+    avatar: img1,
+    title: 'Roman Joined the Team!',
+    subtitle: 'Congratulate him',
+  },
+  {
     avatar: img2,
     title: 'New message received',
     subtitle: 'Salma sent you new message',
@@ -60,13 +61,13 @@ const Notification =[
     title: 'Jolly completed tasks',
     subtitle: 'Assign her new tasks',
   },
-]
+];
 
-
-// 
-// profile dropdown
-const profile =[
-      {
+//
+// Profile dropdown
+//
+const profile = [
+  {
     href: '/user-profile',
     title: 'My Profile',
     subtitle: 'Account Settings',
@@ -84,12 +85,12 @@ const profile =[
     subtitle: 'To-do and Daily Tasks',
     icon: icon3,
   },
-]
+];
 
 // apps dropdown
 
-const appLink =[
-      {
+const appsLink = [
+  {
     href: '/apps/chats',
     title: 'Chat Application',
     subtext: 'Messages & Emails',
@@ -140,7 +141,7 @@ const appLink =[
 ]
 
 const pageLinks = [
-      {
+  {
     href: '/pricing',
     title: 'Pricing Page'
   },
@@ -174,4 +175,4 @@ const pageLinks = [
   },
 ]
 
-export { Notification, profile, pageLinks, appLink};
+export { notifications, profile, pageLinks, appsLink };
