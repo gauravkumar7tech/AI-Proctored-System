@@ -65,7 +65,7 @@ const Sidebar = (props) => {
                   mr: 5,
                 }}
               >
-                AI_EVAL_8
+                GoSec
               </Typography>
             </Box>
 
@@ -117,7 +117,7 @@ const Sidebar = (props) => {
             ml: 1,
           }}
         >
-          AI EVAL_8
+          GoSec
         </Typography>
       </Box>
       {/* ------------------------------------------- */}

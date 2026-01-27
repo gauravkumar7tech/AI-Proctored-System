@@ -8,19 +8,23 @@ import {
   IconButton,
   Badge,
   Typography,
+  Tooltip,
 } from '@mui/material';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
 // components
 import Profile from './Profile';
-import { IconBellRinging, IconMenu } from '@tabler/icons-react';
-import { useSelector } from 'react-redux';
+import { IconBellRinging, IconMenu, IconMoon, IconSun } from '@tabler/icons-react';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleTheme } from '../../../slices/themeSlice';
 
 const Header = (props) => {
   // const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
   // const lgDown = useMediaQuery((theme) => theme.breakpoints.down('lg'));
   const { userInfo } = useSelector((state) => state.auth);
+  const themeMode = useSelector((state) => state.theme.mode);
+  const dispatch = useDispatch();
 
   const AppBarStyled = styled(AppBar)(({ theme }) => ({
     boxShadow: '2px',
@@ -69,6 +73,21 @@ const Header = (props) => {
             <IconBellRinging size="21" stroke="1.5" />
           </Badge>
         </IconButton>
+        
+        <Tooltip title={themeMode === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}>
+          <IconButton
+            color="inherit"
+            onClick={() => dispatch(toggleTheme())}
+            aria-label="toggle theme"
+          >
+            {themeMode === 'light' ? (
+              <IconMoon size="21" stroke="1.5" />
+            ) : (
+              <IconSun size="21" stroke="1.5" />
+            )}
+          </IconButton>
+        </Tooltip>
+        
         <Box flexGrow={1} />
         <Stack spacing={1} direction="row" alignItems="center">
           <Typography variant="contained" color="primary">
